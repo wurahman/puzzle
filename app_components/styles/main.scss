@@ -89,3 +89,68 @@ body {
     border-bottom: 0;
   }
 }
+
+/** Puzzle styles **/
+
+		.tile-placeholder {
+	height: 100px;
+	width: 100px;
+	display: inline-block;
+	float: left;
+}
+.tile {
+	height: 100px;
+	width: 100px;
+	display: inline-block;
+	float: left;
+	text-align: center;
+	line-height: 100px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 50px;
+  border: 1px dotted #AAA;
+}
+
+.tile-1 {
+	background-image: url('../images/isentia.jpg');
+	background-position: 0 0;
+}
+.tile-2 {
+	background-image: url('../images/isentia.jpg');
+	background-position: -100px 0;
+}
+.tile-3 {
+	background-image: url('../images/isentia.jpg');
+	background-position: -200px 0;
+}
+.tile-4 {
+	background-image: url('../images/isentia.jpg');
+	background-position: 0 -100px;
+}
+.tile-5 {
+	background-image: url('../images/isentia.jpg');
+	background-position: -100px -100px;
+}
+.tile-6 {
+	background-image: url('../images/isentia.jpg');
+	background-position: -200px -100px;
+}
+.tile-7 {
+	background-image: url('../images/isentia.jpg');
+	background-position: 0 -200px;
+}
+.tile-8 {
+	background-image: url('../images/isentia.jpg');
+	background-position: -100px -200px;
+}
+.tile-9 {
+	background-image: url('../images/isentia.jpg');
+	background-position: -200px -200px;
+}
+
+
+#tiles-container {
+	height: 300px;
+	width: 300px;
+}
+
+

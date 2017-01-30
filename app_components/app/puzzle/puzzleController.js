@@ -5,14 +5,21 @@ angular.module('puzzle')
     var init = function() {
       $scope.selected = -1;
       $scope.puzzle = puzzle;
+      if (!puzzle.loadState()) {
+    	  puzzle.shuffle();
+      }
     }
 
     $scope.shuffle = function() {
-      puzzle.shuffle();
-    }
+        puzzle.shuffle();
+      }
+
+    $scope.clearState = function() {
+        puzzle.clearState();
+      }
 
     $scope.selectTile = function(i) {
-      if ($scope.selected != -1) {
+      if ($scope.selected != -1 && i !== $scope.selected) {
         $scope.switchTiles(i, $scope.selected);
       } else {
         $scope.selected = ($scope.selected === i) ? '-1' : i;

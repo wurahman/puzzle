@@ -9,6 +9,7 @@ angular.module('puzzle.model', ['underscore', 'LocalStorageModule'])
       moves: 0,
       completed: false,
       tiles: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+      // This is not called automatically, and should be called by controller if state is not saved in localstorage
       shuffle: function() {
         this.tiles = _.shuffle(this.tiles);
         this.moves = 0;
@@ -32,14 +33,15 @@ angular.module('puzzle.model', ['underscore', 'LocalStorageModule'])
         localStorageService.set(TILES, JSON.stringify(this.tiles));
         localStorageService.set(MOVES, JSON.stringify(this.moves));
       },
+      // This method retrieves the puzzle state from localstorage, and returns true if state is found, returns false otherwise
       loadState: function() {
         if (localStorageService.isSupported) {
           if (_.contains(localStorageService.keys(), TILES) && _.contains(localStorageService.keys(), MOVES)) {
             this.tiles = JSON.parse(localStorageService.get(TILES));
             this.moves = JSON.parse(localStorageService.get(MOVES));
-            console.log('loaded state from storage');
+            return true;
           } else {
-            console.log('Nothing found in storage');
+            return false
           }
         }
       },
