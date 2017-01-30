@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body>
+  <body ng-app="puzzleApp">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -29,7 +29,7 @@
      </div>
 
     <div class="container-fluid">
-    	<h1>It Works!</h1>
+    	<div ng-view></div>
     </div>
 
 
@@ -45,8 +45,16 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/angular-underscore-module/angular-underscore-module.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
+
+    <script src="scripts/app.js"></script>
+    <script src="app/puzzle/puzzleModule.js"></script>
+    <script src="app/puzzle/puzzleController.js"></script>
+    <script src="app/puzzle/puzzleService.js"></script>
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <!-- endbuild -->

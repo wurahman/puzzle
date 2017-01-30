@@ -1,0 +1,36 @@
+
+<div>
+	<h1>Puzzle</h1>
+	<div class="col-md-3">
+		<hr>
+		<button class="btn btn-primary" ng-click="shuffle()">Shuffle</button>
+		<button class="btn btn-primary" ng-click="puzzle.debugState()">Get State</button>
+		<button class="btn btn-primary" ng-click="puzzle.clearState()">Clear State</button>
+		<button class="btn btn-primary" ng-click="puzzle.loadState()">Load State</button>
+		
+		<hr>
+		{{puzzle}}
+	</div>
+	<div class="col-md-9">
+		<div ng-if="puzzle.completed" class="alert alert-success" role="alert">
+		  <strong>Well done!</strong> You successfully Completed puzzle in {{puzzle.moves}} moves!
+		</div>
+		<br>
+		 Moves {{puzzle.moves}}  
+		<hr>
+		<div style="width: 300px;">
+			<button ng-disabled="puzzle.completed" class="btn btn-default" ng-class="{'btn-success': $index===selected}" ng-click="selectTile($index)" ng-repeat="tile in puzzle.tiles">{{tile}}</button>
+		</div>
+		<div class="col-md-9" style="background-color: #EFFACA">
+			<div id="tiles-container">
+				<div ng-repeat="tile in puzzle.tiles">
+					<div class="tile">
+						<div class="tile-{{$index+1}}">
+							{{tile}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
