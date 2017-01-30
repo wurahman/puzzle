@@ -1,6 +1,6 @@
 <div>
   <div class="col-md-3 col-xs-12">
-	<h1>Puzzle</h1>
+    <h1>Puzzle</h1>
     <hr>
     <button class="btn btn-primary" ng-click="shuffle()">Shuffle</button>
     <button class="btn btn-primary" ng-click="clearState()">Clear</button>
@@ -11,17 +11,10 @@
     <div ng-if="puzzle.completed" class="alert alert-success" role="alert">
       <strong>Well done!</strong> You successfully Completed puzzle in {{puzzle.moves}} moves!
     </div>
-    <div>
-      <button ng-disabled="puzzle.completed" class="btn btn-default" ng-class="{'btn-success': $index===selected}" ng-click="selectTile($index)" ng-repeat="tile in puzzle.tiles">{{tile}}</button>
-    </div>
     <div class="col-md-9">
       <div id="tiles-container">
         <div ng-repeat="tile in puzzle.tiles">
-          <div class="tile">
-			<div class="tile-{{tile}}">
-				{{tile}}
-			</div>
-          </div>
+          <div ng-click="selectTile($index)" ng-disabled="puzzle.completed" class="tile tile-{{tile}}" ng-class="{'selected': $index===selected}"></div>
         </div>
       </div>
     </div>

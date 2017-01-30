@@ -21,6 +21,7 @@ module.exports = function(config) {
       'bower_components/angular-touch/angular-touch.js',
       'bower_components/jquery/dist/jquery.min.js',
       'app_components/scripts/*.js',
+      'app_components/app/puzzle/puzzleModule.js',
       'app_components/app/**/*.js',
       'test/app/**/*.spec.js'
        ],
