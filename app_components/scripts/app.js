@@ -18,7 +18,7 @@ angular
     'puzzle',
     'LocalStorageModule'
   ])
-  .config(function ($routeProvider, localStorageServiceProvider) {
+  .config(function($routeProvider, localStorageServiceProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'app/puzzle/puzzle.html',
